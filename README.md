@@ -9,7 +9,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Doc Standard](https://img.shields.io/badge/GB%2FT-9704--2012-blue)](https://openstd.samr.gov.cn/)
 [![Notice Types](https://img.shields.io/badge/通知类型-7种-green)](#7-种通知类型)
-[![Samples](https://img.shields.io/badge/样例-326篇-orange)](#样例索引)
 
 [核心能力](#核心能力) · [7种通知类型](#7-种通知类型) · [工作流程](#工作流程) · [安装使用](#安装与使用) · [目录结构](#目录结构)
 
@@ -41,6 +40,7 @@
 - **AI 痕迹检测** — 区分合法部署语言和套话
 - **零编造** — 不添加用户未提供的事实和数据
 - **格式联动** — 起草完成后可调用 `$document-format-skill` 做格式终审
+- **SuperGrill 质询引擎** — 乔哈里视窗驱动，动手前用最少轮次锁定最有影响的决策边界；区域诊断→理解锁定→结构化多选→增量验证→硬关卡退出，不猜、不烦、不留暗箱
 
 ## 五条底线
 
@@ -144,22 +144,30 @@ git clone https://github.com/Bugu1012/official-notice-skill.git ~/.claude/skills
     ├── 语气梯度速查表.md
     ├── 通知采集指南.md
     ├── 内部核验附注模板.md
-    └── 真实公开样例索引.csv     # 326条样例
 ```
 
 ## 样例索引
 
-326 条真实公开通知样例，来源为 gov.cn 及各部委网站：
+542 条真实公开通知样例，覆盖国家级与市级两个层级：
+
+### 层级分布
+
+| 层级 | 数量 | 占比 | 来源 |
+|---|---|---|---|
+| 国家级 | 262 | 48.3% | gov.cn（国务院/国办/部委） |
+| 市级 | 280 | 51.7% | beijing.gov.cn / shanghai.gov.cn / jinan.gov.cn |
+
+### 类型分布
 
 | 类型 | 数量 |
 |---|---|
-| 指示性通知 | 96 |
-| 发布性通知 | 80 |
-| 会议通知 | 46 |
-| 批转性通知 | 39 |
-| 转发性通知 | 32 |
-| 事务性通知 | 30 |
-| 任免通知 | 3 |
+| 发布性通知 | 237 |
+| 指示性通知 | 148 |
+| 会议通知 | 37 |
+| 批转性通知 | 37 |
+| 转发性通知 | 35 |
+| 任免通知 | 24 |
+| 事务性通知 | 24 |
 
 ## 规范依据
 
@@ -195,6 +203,12 @@ git clone https://github.com/Bugu1012/official-notice-skill.git ~/.claude/skills
 - [blader/humanizer](https://github.com/blader/humanizer) — 文本自然化方法
 - [op741lst/Humanizer-zh](https://github.com/op741lst/Humanizer-zh) — 中文自然化
 
+**质询式澄清**
+- SuperGrill — 乔哈里视窗（Johari Window）驱动的结构化质询式澄清协议。将信息盲区分为开放/隐藏/盲区/未知四区域，按区域动态选择策略；通过理解锁定硬关卡、每次一问的结构化多选、保守推荐优先、3 轮上限和注入免疫，确保在动手之前用最少轮次确认最有影响的决策边界，杜绝猜测式起草。
+
 ## License
 
 [MIT](LICENSE)
+[![Samples](https://img.shields.io/badge/样例-542篇-orange)](#样例索引)
+[![Coverage](https://img.shields.io/badge/层级覆盖-国家级%2B市级-brightgreen)](#样例索引)
+    └── 真实公开样例索引.csv     # 542条样例（国家级262+市级280）
