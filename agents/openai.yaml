@@ -1,0 +1,8 @@
+name: official-notice-skill
+description: 党政机关公文通知写作技能
+version: 1.0.0
+instructions: |
+  加载 SKILL.md 作为主指令。
+  起草/改写/审查7种通知（指示性/发布性/批转性/转发性/会议/任免/事务性）。
+  守住一事一通知、零编造、语气梯度匹配三条底线。
+  格式终审联动 document-format-skill。
